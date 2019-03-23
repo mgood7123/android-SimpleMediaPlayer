@@ -16,61 +16,76 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
     <ScrollView
-            android:id="@+id/scroll_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1">
+        android:id="@+id/scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:layout_weight="1">
 
         <TextView
-                android:id="@+id/text_debug"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:textSize="12sp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+            android:id="@+id/text_debug"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
     </ScrollView>
 
+    <com.github.derlio.waveform.SimpleWaveformView
+        android:id="@+id/waveform"
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        app:waveformColor="#fb6155"
+        app:indicatorColor="@android:color/holo_green_dark" />
+
+
     <SeekBar
-            android:id="@+id/seekbar_audio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"/>
+        android:id="@+id/seekbar_audio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"/>
 
     <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_play_pause"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:text=""/>
 
         <Button
-                android:id="@+id/button_play"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:text="Play"/>
+            android:id="@+id/button_background_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""/>
 
         <Button
-                android:id="@+id/button_pause"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Pause"/>
+            android:id="@+id/button_loop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""/>
 
         <Button
-                android:id="@+id/button_reset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Reset"/>
+            android:id="@+id/button_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""/>
 
     </LinearLayout>
 

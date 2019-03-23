@@ -14,26 +14,27 @@
  * limitations under the License.
  */
 
-package com.example.android.mediaplayersample;
+package com.example.android.mediaplayersample
 
 /**
- * Allows {@link MainActivity} to control media playback of {@link MediaPlayerHolder}.
+ * Allows [MainActivity] to control media playback of [MediaPlayerHolder].
  */
-public interface PlayerAdapter {
+interface PlayerAdapter {
 
-    void loadMedia(int resourceId);
+    fun isPlaying() : Boolean
 
-    void release();
+    fun loadMedia(file : String)
+    fun loadMedia(resourceId: Int)
 
-    boolean isPlaying();
+    fun release()
 
-    void play();
+    fun play()
 
-    void reset();
+    fun reset(file : String)
 
-    void pause();
+    fun pause()
 
-    void initializeProgressCallback();
+    fun initializeProgressCallback()
 
-    void seekTo(int position);
+    fun seekTo(position: Int)
 }
